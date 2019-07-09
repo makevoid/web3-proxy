@@ -1,25 +1,29 @@
 require_relative 'env'
 
-class Resp
-  def self.r(resp)
-    { "result": resp }.to_json
-  end
-end
-
 class Web3Proxy < Roda
+  plugin :all_verbs
+
+  CORS = -> {
+    response['Access-Control-Allow-Origin']  = CONF[:host]
+    response['Access-Control-Allow-Headers'] = 'Content-Type'
+  }
+
   route do |r|
+    r.get do
+      "OK"
+    end
+
+    r.options do
+      CORS.()
+      ""
+    end
+
     r.post do
-      # Msg.m("net_version")
-      # p r.body.read
-      # Resp.r("100")
+      CORS.()
       body = r.body.read
-      puts "Proxying request:"
-      puts body
+      # puts "Proxying request:"
+      # puts body
       Req.post body
     end
   end
 end
-
-
-# - create a CORS server
-# - use cordova native plugin to connect directly without needing a cors server

@@ -1,18 +1,4 @@
-require_relative 'msg'
-
-class RpcErrResp
-  attr_reader :err
-
-  def initialize(error)
-    @err = error
-  end
-end
-
-class EmptyRespError < StandardError
-  def message
-    "JSON body was empty"
-  end
-end
+require_relative 'req_lib'
 
 class Req
   def initialize(msg)
@@ -20,7 +6,7 @@ class Req
   end
 
   def post
-    host = ENV["HOST"] || "dai.mkv.run"
+    host = ENV["HOST"] || DEFAULT_HOST
     port = ENV["PORT"] || 8545
     url = "http://#{host}:#{port}"
     uri = URI url
@@ -39,7 +25,7 @@ class Req
       RpcErrResp.new error
     else
       result = json.fetch "result"
-      puts "R: #{result}"
+      # puts "R: #{result}"
       json.to_json
     end
   end
