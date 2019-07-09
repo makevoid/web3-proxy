@@ -3,9 +3,9 @@ require_relative 'env'
 class Web3Proxy < Roda
   plugin :all_verbs
 
-  CORS = -> {
-    response['Access-Control-Allow-Origin']  = CONF[:host]
-    response['Access-Control-Allow-Headers'] = 'Content-Type'
+  CORS = -> (r) {
+    r.response['Access-Control-Allow-Origin']  = CONF[:host]
+    r.response['Access-Control-Allow-Headers'] = 'Content-Type'
   }
 
   route do |r|
@@ -14,12 +14,12 @@ class Web3Proxy < Roda
     end
 
     r.options do
-      CORS.()
+      CORS.(r)
       ""
     end
 
     r.post do
-      CORS.()
+      CORS.(r)
       body = r.body.read
       # puts "Proxying request:"
       # puts body
