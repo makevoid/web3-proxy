@@ -24,9 +24,12 @@ config: https://github.com/makevoid/web3-proxy/tree/master/config
 ## running
 
     bundle exec rake
+    
 
 
-This will start a proxy on `http://localhost:3000`,  (TODO: finish doc and implementation :D)  or if you pass the required env variables / arguments to rake by running `bundle exec rake RPC_HOST=123 RPC_PORT=xxx` you will have a server running on various hosts
+This will start a proxy on `http://localhost:3000`.  
+
+
 
 ### project status
 
