@@ -1,18 +1,20 @@
 # web3-proxy
 
+
 JSON RPC Proxy to bypass cross-origin policies (CORS - Cross-origin resource sharing - http header and browsers security measure) 
 
 Sometimes (in dev envs especially) you want to escape CORS as you don't want to or when you can't touch the server 
+
 
 ## prereqs
 
 - ruby 
 - web3 running
 
-
 ## config
 
 TODO: add config doc
+
 config: https://github.com/makevoid/web3-proxy/tree/master/config
 
 ## install
@@ -22,9 +24,17 @@ config: https://github.com/makevoid/web3-proxy/tree/master/config
 ## running
 
     bundle exec rake
-    
-This will start a proxy on http:// or if you pass the `rake VAR=1` env variable to rake by running `bundle exec rake RPC_HOST=123 RPC_PORT=xxx` (TODO: finish doc) http://localhost:8545 or      
-    
+
+
+This will start a proxy on `http://localhost:3000`,  (TODO: finish doc and implementation :D)  or if you pass the required env variables / arguments to rake by running `bundle exec rake RPC_HOST=123 RPC_PORT=xxx` you will have a server running on various hosts
+
+### project status
+
+the project needs to be tested and documented, but the main code is done and it's quite simple, so you can just run it or 
+
+I use it to proxy xdai for xdai-wallet (https://github.com/makevoid/xdai-wallet)
+
+---
    
 Enjoy, 
 
