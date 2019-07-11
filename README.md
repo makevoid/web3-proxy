@@ -30,7 +30,7 @@ This will start a proxy on `http://localhost:3000`,  (TODO: finish doc and imple
 
 ### project status
 
-the project needs to be tested and documented, but the main code is done and
+the project needs to be tested and documented, but the main code is done (the code is pretty small, start from: github.com/makevoid/web3-proxy/blob/master/web3_proxy.rb#L3 )! 
 
 ---
    
