@@ -30,9 +30,7 @@ This will start a proxy on `http://localhost:3000`,  (TODO: finish doc and imple
 
 ### project status
 
-the project needs to be tested and documented, but the main code is done and it's quite simple, so you can just run it or 
-
-I use it to proxy xdai for xdai-wallet (https://github.com/makevoid/xdai-wallet)
+the project needs to be tested and documented, but the main code is done and
 
 ---
    
